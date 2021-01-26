@@ -1,0 +1,28 @@
+<div class="card">
+    <div class="card-body text-center">
+        <img width="150" height="150" class="rounded-circle img-thumbnail border-danger"
+        [src]="user?.picture?.large" alt="">
+
+        <div class="card-title ">
+            <h1>
+                <span class="px-2">{{user?.name?.title}}</span>
+                <span class="px-2">{{user?.name?.first}}</span>
+                <span class="px-2">{{user?.name?.last}}</span>
+            </h1>
+
+        </div>
+
+        <div class="card-text">
+            <fa-icon [icon]="faEnvelope"></fa-icon>  {{user?.email}}
+        </div>
+        <div class="card-text">
+            <fa-icon [icon]="faMapMarkedAlt"></fa-icon>  {{user?.location?.city}} {{user?.location?.state}} 
+            <p>{{user?.location?.street?.number}} </p>
+        </div>
+        <div class="card-text">
+            <fa-icon [icon]="faMapMarkedAlt"></fa-icon> {{user?.dob?.date | date : 'dd/MM/yyyy'}} 
+        </div>
+
+        <button class="btn btn-warning m-3" (click)="generateUser()">Generate random user</button>
+    </div>
+</div>
